@@ -8,7 +8,12 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+
 app.use('/api/v1', mainRouter);
+
+app.use((req, res) => {
+  res.status(404).send('Route not found');
+});
 
 connectDB();
 
