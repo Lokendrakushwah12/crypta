@@ -2,11 +2,13 @@
 
 A server-side application built with **Node.js**, **TypeScript**, **Express**, and **MongoDB** to fetch, store, and analyze cryptocurrency statistics. This project includes background jobs for periodic updates and RESTful APIs for retrieving data.
 
+**Live Link:** https://crypta-be.vercel.app/
+
 ## Features
 
-- Fetches and stores the latest cryptocurrency stats (price, market cap, 24-hour change) for Bitcoin, Ethereum, and Matic every 2 hours.
-- Provides an API to retrieve the latest stats for a specified cryptocurrency.
-- Calculates the standard deviation of the price of a cryptocurrency from the last 100 records.
+- Fetches and stores the latest cryptocurrency stats (price, market cap, 24-hour change) for Bitcoin, Ethereum, and Matic every 2 hours in the background.
+- Provides an API to retrieve the latest stats for a specified cryptocurrency ("/api/v1/stat?coin=bitcoin").
+- Calculates the standard deviation of the price of a cryptocurrency from the last 100 records ("/api/v1/deviation?coin=bitcoin").
 - Built using best practices for production-grade development.
 
 ## Getting Started
