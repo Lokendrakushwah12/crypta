@@ -6,4 +6,4 @@ const router = Router();
 router.use('/deviation', deviation);
 router.use('/stat', stats);
 
-module.exports = router;
+export default router;

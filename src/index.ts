@@ -1,12 +1,18 @@
+import express from 'express';
 import { connectDB } from './db';
-import dotenv from 'dotenv';
-import app from './app';
+import mainRouter from './routes/index';
+import './utils/CoinGeckoClient';
+const dotenv = require('dotenv');
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const app = express();
 
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
+app.use(express.json());
+app.use('/api/v1', mainRouter);
+
+connectDB();
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT} http://localhost:${PORT}`);
 });
